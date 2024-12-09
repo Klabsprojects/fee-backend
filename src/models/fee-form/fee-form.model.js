@@ -104,6 +104,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
       },
+      proposedFeeIndividual: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      proposedFeeMultiple: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
       allocatedTo: {
         type: DataTypes.INTEGER,
         references: {
