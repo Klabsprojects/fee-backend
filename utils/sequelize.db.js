@@ -16,13 +16,15 @@ db.sequelize = sequelize;
 
 db.login = require("../src/models/login/login.model.js")(sequelize, Sequelize);
 db.feeform = require("../src/models/fee-form/fee-form.model.js")(sequelize, Sequelize);
+db.district = require("../src/models/fee-form/district.model.js")(sequelize, Sequelize);
+db.school = require("../src/models/fee-form/school.model.js")(sequelize, Sequelize);
 
 // Define associations
 db.feeform.belongsTo(db.login, { as: 'allocatedToSection', foreignKey: 'allocatedTo' });
 
 schema.forEach(x => {
     console.log(x.model);
-     if(x.model == 'login' || x.model == 'feeform' 
+     if(x.model == 'login' || x.model == 'feeform' || x.model == 'district' || x.model == 'school'
      ){ 
         console.log('if ', x.table);
     }

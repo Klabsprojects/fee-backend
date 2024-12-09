@@ -23,4 +23,22 @@ module.exports = (app) => {
     value.getAllForms
   )
 
+  app.put(
+    "/allocateFeeForm",
+    [jwt.verifyToken],
+    value.allocateFeeForm
+  )
+
+  app.get(
+    "/getDistricts",
+    [jwt.verifyToken],
+    value.getDistricts
+  )
+
+  app.get(
+    "/getSchoolType",
+    [jwt.verifyToken],
+    value.getSchoolType
+  )
+
 }

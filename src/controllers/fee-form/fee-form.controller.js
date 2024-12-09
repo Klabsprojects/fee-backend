@@ -78,4 +78,55 @@ exports.getAllForms = async (req, res) => {
       }
 
     };
+
+
+    exports.allocateFeeForm = async (req, res) => {
+      try {
+              let query = {};
+              // let student;
+              // let inputQuery;
+              query.body = req.body;
+              console.log('query.body ', query.body);
+              // Step 1: Check if `id` is provided and fetch the student
+              if (req.query.id && req.body.allocatedTo) {
+                  query.where = { id: req.query.id };
+                  console.log('query ', query);
+                  const updateResult = await commonService.update(db.feeform, query);
+                  console.log('Student updated with login id and approval status');
+                  successRes(res, updateResult, SUCCESS.UPDATED);
+              } else {
+                  throw 'Please provide valid inputs';
+              }
+      } catch (error) {
+          // res.status(500).json({ message: error.message });
+          console.log('Error updating Student:', error);
+          const message = error.message ? error.message : ERRORS.GENERIC;
+          errorRes(res, null, "Error updating Student:", ERRORS.UPDATED);
+      }
+  }
+
+  exports.getDistricts = async (req, res) => {
+    try {
+      let where = {}
+      const districts = await db.district.findAll();
+      successRes(res, districts, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching districts:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
     
+  exports.getSchoolType = async (req, res) => {
+    try {
+      let where = {}
+      const school = await db.school.findAll();
+      successRes(res, school, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching school:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
