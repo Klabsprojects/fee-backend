@@ -66,6 +66,20 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BIGINT,
         allowNull: true,
       },
+      individualOrMultiple: {
+        type: DataTypes.ENUM({
+          values: ['Individual', 'Multiple']
+        }),
+        allowNull: false,
+      },
+      studentStrengthIndividual: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      studentStrengthMultiple: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
       allocatedTo: {
         type: DataTypes.INTEGER,
         references: {
