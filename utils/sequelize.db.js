@@ -15,10 +15,14 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.login = require("../src/models/login/login.model.js")(sequelize, Sequelize);
+db.feeform = require("../src/models/fee-form/fee-form.model.js")(sequelize, Sequelize);
+
+// Define associations
+db.feeform.belongsTo(db.login, { as: 'allocatedToSection', foreignKey: 'allocatedTo' });
 
 schema.forEach(x => {
     console.log(x.model);
-     if(x.model == 'login' || x.model == 'post' 
+     if(x.model == 'login' || x.model == 'feeform' 
      ){ 
         console.log('if ', x.table);
     }
