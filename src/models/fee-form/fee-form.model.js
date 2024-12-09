@@ -80,12 +80,20 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
       },
+      studentStrengthTotal: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       totalNumberOfRteStudentsIndividual: {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
       },
       totalNumberOfRteStudentsMultiple: {
         type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      totalNumberOfRteStudentsTotal: {
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       rteAmountSanctionedIndividual: {
@@ -96,6 +104,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
       },
+      rteAmountSanctionedTotal: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       previousFeeCommitteeOrderFeeIndividual: {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
@@ -104,12 +116,20 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
       },
+      previousFeeCommitteeOrderFeeTotal: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       proposedFeeIndividual: {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
       },
       proposedFeeMultiple: {
         type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      proposedFeeTotal: {
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       allocatedTo: {
