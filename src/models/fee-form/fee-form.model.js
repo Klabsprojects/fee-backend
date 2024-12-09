@@ -132,6 +132,22 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+      districtId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'district',
+            key: 'id'
+        },
+        allowNull: true,
+      },
+      schoolTypeId: {
+        type: Sequelize.UUID,
+        references: {
+            model: 'school',
+            key: 'id'
+        },
+        allowNull: true,
+      },
       allocatedTo: {
         type: DataTypes.INTEGER,
         references: {
