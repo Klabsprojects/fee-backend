@@ -80,6 +80,30 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON, // Use JSON type for storing an object
         allowNull: true,
       },
+      totalNumberOfRteStudentsIndividual: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      totalNumberOfRteStudentsMultiple: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      rteAmountSanctionedIndividual: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      rteAmountSanctionedMultiple: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      previousFeeCommitteeOrderFeeIndividual: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
+      previousFeeCommitteeOrderFeeMultiple: {
+        type: DataTypes.JSON, // Use JSON type for storing an object
+        allowNull: true,
+      },
       allocatedTo: {
         type: DataTypes.INTEGER,
         references: {
