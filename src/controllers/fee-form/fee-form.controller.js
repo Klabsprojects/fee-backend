@@ -166,6 +166,40 @@ exports.getAllForms = async (req, res) => {
 
     };
 
+    exports.getFormById = async (req, res) => {
+      try {
+
+        let where = {}
+
+        if(req.query.id){
+          console.log('id coming ', req.query.id);
+          where.id = req.query.id
+        }
+        else  
+          throw 'Pls provide id';
+
+        // Fetch all posts
+        const posts = await db.feeform.findOne({
+          include: [
+            {
+                model: db.login, // Include the Login model
+                as: 'allocatedToSection', // Alias used in the association
+                required: false, 
+                attributes: ['userName', 'userType', 'id'], // Only select relevant fields
+            },
+          ],
+          order: [['formDate', 'DESC']], // Optionally, order by upload date
+          where: where
+        });
+        successRes(res, posts, SUCCESS.LISTED);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        const message = error.message ? error.message : ERRORS.LISTED;
+        errorRes(res, error, message, file);
+      }
+
+    };
+
 
     exports.allocateFeeForm = async (req, res) => {
       try {

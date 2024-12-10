@@ -42,6 +42,12 @@ module.exports = (app) => {
   )
 
   app.get(
+    "/getFormById",
+    [jwt.verifyToken],
+    value.getFormById
+  )
+
+  app.get(
     "/getDistricts",
     [jwt.verifyToken],
     value.getDistricts
