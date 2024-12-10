@@ -78,6 +78,54 @@ exports.getAllForms = async (req, res) => {
 
     };
 
+    exports.getAllFormsBySection = async (req, res) => {
+      try {
+        const { fromDate, toDate, status, section } = req.query;
+        console.log(fromDate, toDate, status);
+        const startDate = fromDate ? new Date(fromDate) : null;
+        const endDate = toDate ? new Date(toDate) : null;
+        console.log(startDate, endDate);
+        let where = {}
+    
+        if(startDate && endDate){
+          console.log('date coming ', startDate, endDate);
+          where.formDate = {
+              [Op.between]: [startDate, endDate]
+            }
+        }
+        if(status){
+          console.log('status coming ', status);
+          where.status = status;
+        }
+        // Filter by section if provided
+        if (section) {
+          where.allocatedTo = section;
+        }
+        else
+          throw 'Pls provide section id';
+        // Fetch all posts
+        const posts = await db.feeform.findAll({
+          include: [
+            {
+                model: db.login, // Include the Login model
+                as: 'allocatedToSection', // Alias used in the association
+                required: true, 
+                attributes: ['userName', 'userType', 'id'], // Only select relevant fields
+                //where: section ? { userName: section } : {},
+            },
+          ],
+          order: [['formDate', 'DESC']], // Optionally, order by upload date
+          where: where
+        });
+        successRes(res, posts, SUCCESS.LISTED);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        const message = error.message ? error.message : ERRORS.LISTED;
+        errorRes(res, error, message, file);
+      }
+
+    };
+
 
     exports.allocateFeeForm = async (req, res) => {
       try {

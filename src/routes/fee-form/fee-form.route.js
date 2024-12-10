@@ -22,6 +22,12 @@ module.exports = (app) => {
     [jwt.verifyToken],
     value.getAllForms
   )
+  
+  app.get(
+    "/getAllFormsBySection",
+    [jwt.verifyToken],
+    value.getAllFormsBySection
+  )
 
   app.put(
     "/allocateFeeForm",
