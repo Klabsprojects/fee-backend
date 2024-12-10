@@ -62,9 +62,8 @@ exports.getAllForms = async (req, res) => {
             {
                 model: db.login, // Include the Login model
                 as: 'allocatedToSection', // Alias used in the association
-                required: true, 
+                required: false, 
                 attributes: ['userName', 'userType', 'id'], // Only select relevant fields
-                where: section ? { userName: section } : {},
             },
           ],
           order: [['formDate', 'DESC']], // Optionally, order by upload date
