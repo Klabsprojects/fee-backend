@@ -126,6 +126,46 @@ exports.getAllForms = async (req, res) => {
 
     };
 
+    exports.getPendingForms = async (req, res) => {
+      try {
+        console.log('try', req)
+        const { fromDate, toDate, status, section } = req.query;
+        console.log(fromDate, toDate, status);
+        const startDate = fromDate ? new Date(fromDate) : null;
+        const endDate = toDate ? new Date(toDate) : null;
+        console.log(startDate, endDate);
+        let where = {}
+        where.status = 'Pending';
+
+        if(startDate && endDate){
+          console.log('date coming ', startDate, endDate);
+          where.formDate = {
+              [Op.between]: [startDate, endDate]
+            }
+        }
+
+        // Fetch all posts
+        const posts = await db.feeform.findAll({
+          include: [
+            {
+                model: db.login, // Include the Login model
+                as: 'allocatedToSection', // Alias used in the association
+                required: false, 
+                attributes: ['userName', 'userType', 'id'], // Only select relevant fields
+            },
+          ],
+          order: [['formDate', 'DESC']], // Optionally, order by upload date
+          where: where
+        });
+        successRes(res, posts, SUCCESS.LISTED);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        const message = error.message ? error.message : ERRORS.LISTED;
+        errorRes(res, error, message, file);
+      }
+
+    };
+
 
     exports.allocateFeeForm = async (req, res) => {
       try {
@@ -133,6 +173,7 @@ exports.getAllForms = async (req, res) => {
               // let student;
               // let inputQuery;
               query.body = req.body;
+              query.body.status = "Allocated"
               console.log('query.body ', query.body);
               // Step 1: Check if `id` is provided and fetch the student
               if (req.query.id && req.body.allocatedTo) {

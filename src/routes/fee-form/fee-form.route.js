@@ -34,6 +34,12 @@ module.exports = (app) => {
     [jwt.verifyToken],
     value.allocateFeeForm
   )
+  
+  app.get(
+    "/getPendingForms",
+    [jwt.verifyToken],
+    value.getPendingForms
+  )
 
   app.get(
     "/getDistricts",
