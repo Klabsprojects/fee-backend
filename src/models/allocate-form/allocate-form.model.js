@@ -146,6 +146,68 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
 
+      //B. Other Schemes and Benefits for the Staff
+      account1bLicExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bLicAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bLicReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account1bStaffUniformExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bStaffUniformAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bStaffUniformReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account1bIncentiveExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bIncentiveAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bIncentiveReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account1bGiftsExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bGiftsAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bGiftsReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account1bTotalExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1bTotalAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
       status: {
         type: DataTypes.STRING,
         defaultValue: 'Pending'
