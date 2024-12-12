@@ -591,6 +591,60 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
 
+      //Account IV - Maintenance
+      //a) Campus Maintenance
+      account4aGardeningExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aGardeningAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aGardeningReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4aSweepingExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aSweepingAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aSweepingReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4aSanitationExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aSanitationAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aSanitationReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4aSecurityServicesExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aSecurityServicesAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4aSecurityServicesReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
       account4aTotalExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -599,6 +653,60 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+
+      //b) Laboratory Maintenance
+      account4bScienceLabExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bScienceLabAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bScienceLabReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4bLanguageLabExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bLanguageLabAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bLanguageLabReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4bComputerLabExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bComputerLabAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bComputerLabReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4bDigitalLibraryLabExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bDigitalLibraryLabAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4bDigitalLibraryLabReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
       account4bTotalExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -607,6 +715,22 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+
+      //c) Equipment Maintenance
+
+      account4cXeroxExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4cXeroxAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4cXeroxReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
       account4cTotalExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -615,6 +739,60 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+
+      //d) Maintenance Expenditures Electrical and other Machines
+      account4dElectricLinesExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dElectricLinesAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dElectricLinesReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4dGeneratorExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dGeneratorAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dGeneratorReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4dFireExtinguisherExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dFireExtinguisherAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dFireExtinguisherReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4dAirConditionerExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dAirConditionerAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4dAirConditionerReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
       account4dTotalExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -623,6 +801,60 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+
+      //e) Building Maintenance
+      account4eColourWashExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eColourWashAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eColourWashReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4eRepairsExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eRepairsAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eRepairsReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4eLeaseExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eLeaseAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eLeaseReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account4eDepreciationExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eDepreciationAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account4eDepreciationReason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
       account4eTotalExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -640,6 +872,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
 
+      //e) Building Maintenance
       account5FurnitureExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -722,6 +955,272 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
 
+      //Account VI- Futuristic Development
+      account6Expenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Allowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Reason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account6Expenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Allowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Reason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account6Expenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Allowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Reason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account6Expenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Allowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6Reason: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      account6TotalExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6TotalAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1to6TotalExpenditure: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account1to6TotalAllowed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      //Calculation form
+      currentYearLkgStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearLkgFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearLkgIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearUkgStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearUkgFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearUkgIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearFirstStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearFirstFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearFirstIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearSecondStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearSecondFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearSecondIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearThirdStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearThirdFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearThirdIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearFourStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearFourFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearFourIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearFiveStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearFiveFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearFiveIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearSixStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearSixFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearSixIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearSevenStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearSevenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearSevenIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearEightStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearEightFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearEightIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearNineStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearNineFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearNineIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearTenStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearTenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearTenIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearElevenStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearElevenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearElevenIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearTwelveStrength: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearTwelveFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearTwelveIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      currentYearTotalIncome: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearTotalExpenses: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      currentYearDifference: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
       account1: {
         type: DataTypes.STRING,
         defaultValue: 'Pending'
@@ -743,6 +1242,10 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 'Pending'
       },
       account6: {
+        type: DataTypes.STRING,
+        defaultValue: 'Pending'
+      },
+      account7: {
         type: DataTypes.STRING,
         defaultValue: 'Pending'
       },
