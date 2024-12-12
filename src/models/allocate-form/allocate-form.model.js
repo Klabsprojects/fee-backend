@@ -956,54 +956,54 @@ module.exports = (sequelize, DataTypes) => {
       },
 
       //Account VI- Futuristic Development
-      account6Expenditure: {
+      account6DevelopmentFundExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Allowed: {
+      account6DevelopmentFundAllowed: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Reason: {
+      account6DevelopmentFundReason: {
         type: DataTypes.STRING,
         allowNull: true,
       },
 
-      account6Expenditure: {
+      account6MinorityExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Allowed: {
+      account6MinorityAllowed: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Reason: {
+      account6MinorityReason: {
         type: DataTypes.STRING,
         allowNull: true,
       },
 
-      account6Expenditure: {
+      account6InfrastructureExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Allowed: {
+      account6InfrastructureAllowed: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Reason: {
+      account6InfrastructureReason: {
         type: DataTypes.STRING,
         allowNull: true,
       },
 
-      account6Expenditure: {
+      account6UnexpectedExpendituresExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Allowed: {
+      account6UnexpectedExpendituresAllowed: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6Reason: {
+      account6UnexpectedExpendituresReason: {
         type: DataTypes.STRING,
         allowNull: true,
       },
