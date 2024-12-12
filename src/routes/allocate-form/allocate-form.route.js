@@ -23,46 +23,10 @@ module.exports = (app) => {
     value.editAllocateForm
   )
 
-  // app.get(
-  //   "/getAllForms",
-  //   [jwt.verifyToken],
-  //   value.getAllForms
-  // )
-  
-  // app.get(
-  //   "/getAllFormsBySection",
-  //   [jwt.verifyToken],
-  //   value.getAllFormsBySection
-  // )
-
-  // app.put(
-  //   "/allocateFeeForm",
-  //   [jwt.verifyToken],
-  //   value.allocateFeeForm
-  // )
-  
-  // app.get(
-  //   "/getPendingForms",
-  //   [jwt.verifyToken],
-  //   value.getPendingForms
-  // )
-
-  // app.get(
-  //   "/getFormById",
-  //   [jwt.verifyToken],
-  //   value.getFormById
-  // )
-
-  // app.get(
-  //   "/getDistricts",
-  //   [jwt.verifyToken],
-  //   value.getDistricts
-  // )
-
-  // app.get(
-  //   "/getSchoolType",
-  //   [jwt.verifyToken],
-  //   value.getSchoolType
-  // )
+    app.get(
+    "/getAllocatedFormByFeeForm",
+    [jwt.verifyToken],
+    value.getAllocatedFormByFeeForm
+  )
 
 }

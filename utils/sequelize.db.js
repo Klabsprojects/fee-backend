@@ -22,6 +22,8 @@ db.allocateform = require("../src/models/allocate-form/allocate-form.model.js")(
 
 // Define associations
 db.feeform.belongsTo(db.login, { as: 'allocatedToSection', foreignKey: 'allocatedTo' });
+db.allocateform.belongsTo(db.feeform, { as: 'feeformReference', foreignKey: 'feeformId' });
+db.allocateform.belongsTo(db.login, { as: 'allocatedToSection', foreignKey: 'allocatedTo' });
 
 schema.forEach(x => {
     console.log(x.model);
