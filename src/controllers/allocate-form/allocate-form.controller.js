@@ -26,6 +26,33 @@ exports.register = async (req, res) => {
     }
     }
 
+    exports.editAllocateForm = async (req, res) => {
+      try {
+              let query = {};
+              // let student;
+              // let inputQuery;
+              query.body = req.body;
+              console.log('query.body ', query.body);
+              // Step 1: Check if `id` is provided and fetch the student
+              if (req.query.feeformId && req.query.allocatedTo) {
+                  query.where = { feeformId: req.query.feeformId,
+                    allocatedTo: req.query.allocatedTo
+                   };
+                  console.log('query ', query);
+                  const updateResult = await commonService.update(db.allocateform, query);
+                  console.log('allocateform update success');
+                  successRes(res, updateResult, SUCCESS.UPDATED);
+              } else {
+                  throw 'Please provide valid inputs';
+              }
+      } catch (error) {
+          // res.status(500).json({ message: error.message });
+          console.log('Error updating allocateform:', error);
+          const message = error.message ? error.message : ERRORS.GENERIC;
+          errorRes(res, null, "Error updating allocateform:", ERRORS.UPDATED);
+      }
+  }
+
 exports.getAllForms = async (req, res) => {
       try {
         const { fromDate, toDate, status, section } = req.query;

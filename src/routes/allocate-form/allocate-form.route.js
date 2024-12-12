@@ -17,6 +17,12 @@ module.exports = (app) => {
     value.register
   );
 
+    app.put(
+    "/editAllocateForm",
+    [jwt.verifyToken],
+    value.editAllocateForm
+  )
+
   // app.get(
   //   "/getAllForms",
   //   [jwt.verifyToken],
