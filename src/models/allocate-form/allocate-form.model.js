@@ -1206,6 +1206,24 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
 
+      futureYear1LkgFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2LkgFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1UkgFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2UkgFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
       futureYear1FirstFee: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -1313,6 +1331,25 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+
+      proposedFeeLkg: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeLkg: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeUkg: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeUkg: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
 
       proposedFeeFirst: {
         type: DataTypes.INTEGER,
