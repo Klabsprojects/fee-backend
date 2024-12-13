@@ -1008,6 +1008,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
 
+      account6NumberOfChildren: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      account6MeanValue: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       account6TotalExpenditure: {
         type: DataTypes.INTEGER,
         allowNull: true,
