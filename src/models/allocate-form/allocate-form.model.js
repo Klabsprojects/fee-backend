@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aPrincipalReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aTeachingStaffReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aNonTeachingStaffReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -68,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aEpfReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -81,7 +81,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aEsiReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -94,7 +94,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aEarnedLeaveReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -107,7 +107,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aGratuityReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -120,7 +120,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aPensionReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -133,7 +133,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1aRetirementPurseReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
       
@@ -156,7 +156,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1bLicReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -169,7 +169,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1bStaffUniformReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -182,7 +182,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1bIncentiveReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -195,7 +195,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account1bGiftsReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -217,7 +217,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2ElectricityChargesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -230,7 +230,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2FuelForGeneratorReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -243,7 +243,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2WaterTaxesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -256,7 +256,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2PropertyTaxesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -269,7 +269,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2TelephoneReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -282,7 +282,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2InternetReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -295,7 +295,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2PostageReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -308,7 +308,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2PrintingReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -321,7 +321,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2StationeryReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -334,7 +334,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2ExaminationReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -347,7 +347,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2BooksReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -360,7 +360,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2TeachingAidsReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -373,7 +373,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2SportsGamesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -386,7 +386,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2StaffWelfareReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -399,7 +399,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2SpecialTrainingReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -412,7 +412,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2RecognitionExpensesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -425,7 +425,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2AdministrativeTravelReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -438,7 +438,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2ProfessionalFeeReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -451,7 +451,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2HospitalityReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -464,7 +464,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2FunctionsReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -477,7 +477,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account2AdvertisementForTeacherRecruitmentReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -500,7 +500,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account3EducationTourReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -513,7 +513,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account3SeminarReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -526,7 +526,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account3GroupActivitiesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -539,7 +539,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account3MedicalExpensesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -552,7 +552,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account3TeachingThroughTechnologyReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -565,7 +565,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account3CoCurricularReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -578,7 +578,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account3ExtraCurricularReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -602,7 +602,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4aGardeningReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -615,7 +615,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4aSweepingReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -628,7 +628,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4aSanitationReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -641,7 +641,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4aSecurityServicesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -664,7 +664,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4bScienceLabReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -677,7 +677,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4bLanguageLabReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -690,7 +690,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4bComputerLabReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -703,7 +703,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4bDigitalLibraryLabReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -727,7 +727,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4cXeroxReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -750,7 +750,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4dElectricLinesReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -763,7 +763,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4dGeneratorReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -776,7 +776,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4dFireExtinguisherReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -789,7 +789,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4dAirConditionerReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -812,7 +812,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4eColourWashReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -825,7 +825,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4eRepairsReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -838,7 +838,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4eLeaseReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -851,7 +851,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account4eDepreciationReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -882,7 +882,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account5FurnitureReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -895,7 +895,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account5EquipmentReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -908,7 +908,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account5LandReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -921,7 +921,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account5NewConstructionReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -934,7 +934,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account5ModernizationReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -965,7 +965,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account6DevelopmentFundReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -978,7 +978,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account6MinorityReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -991,7 +991,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account6InfrastructureReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -1004,7 +1004,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       account6UnexpectedExpendituresReason: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -1222,35 +1222,35 @@ module.exports = (sequelize, DataTypes) => {
       },
 
       account1: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
       account2: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
       account3: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
       account4: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
       account5: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
       account6: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
       account7: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
       status: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         defaultValue: 'Pending'
       },
     },
