@@ -956,55 +956,39 @@ module.exports = (sequelize, DataTypes) => {
       },
 
       //Account VI- Futuristic Development
-      account6DevelopmentFundExpenditure: {
+      account6DevelopmentFundPercentage: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6DevelopmentFundAllowed: {
+      account6DevelopmentFundAmount: {
         type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      account6DevelopmentFundReason: {
-        type: DataTypes.TEXT,
         allowNull: true,
       },
 
-      account6MinorityExpenditure: {
+      account6MinorityPercentage: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6MinorityAllowed: {
+      account6MinorityAmount: {
         type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      account6MinorityReason: {
-        type: DataTypes.TEXT,
         allowNull: true,
       },
 
-      account6InfrastructureExpenditure: {
+      account6InfrastructurePercentage: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6InfrastructureAllowed: {
+      account6InfrastructureAmount: {
         type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      account6InfrastructureReason: {
-        type: DataTypes.TEXT,
         allowNull: true,
       },
 
-      account6UnexpectedExpendituresExpenditure: {
+      account6UnexpectedExpendituresPercentage: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6UnexpectedExpendituresAllowed: {
+      account6UnexpectedExpendituresAmount: {
         type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      account6UnexpectedExpendituresReason: {
-        type: DataTypes.TEXT,
         allowNull: true,
       },
 
@@ -1016,19 +1000,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6TotalExpenditure: {
+
+      account6Total: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      account6TotalAllowed: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      account1to6TotalExpenditure: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      account1to6TotalAllowed: {
+      account1to6Total: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
@@ -1227,6 +1204,227 @@ module.exports = (sequelize, DataTypes) => {
       currentYearDifference: {
         type: DataTypes.INTEGER,
         allowNull: true,
+      },
+
+      futureYear1FirstFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2FirstFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1SecondFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2SecondFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1ThirdFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2ThirdFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1FourFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2FourFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1FiveFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2FiveFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1SixFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2SixFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1SevenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2SevenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1EightFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2EightFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1NineFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2NineFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1TenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2TenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1ElevenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2ElevenFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      futureYear1TwelveFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      futureYear2TwelveFee: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      proposedFeeFirst: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeFirst: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeSecond: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeSecond: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeThird: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeThird: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      proposedFeeFour: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeFour: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeFive: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeFive: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeSix: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeSix: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      proposedFeeSeven: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeSeven: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeEight: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeEight: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeNine: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeNine: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      proposedFeeTen: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeTen: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeEleven: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeEleven: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      
+      proposedFeeTwelve: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      previousOrderFeeTwelve: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+
+      AttendedBy: {
+        type: DataTypes.TEXT,
+        allowNull: true
       },
 
       account1: {
