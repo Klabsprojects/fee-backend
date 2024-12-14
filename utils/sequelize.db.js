@@ -21,6 +21,8 @@ db.school = require("../src/models/fee-form/school.model.js")(sequelize, Sequeli
 db.allocateform = require("../src/models/allocate-form/allocate-form.model.js")(sequelize, Sequelize);
 
 // Define associations
+//db.feeform.hasOne(db.allocateform, { as: 'allocateformReference', foreignKey: 'allocateformId' });
+db.feeform.hasOne(db.allocateform, { foreignKey: 'feeformId', as: 'allocateformReference' }); 
 db.feeform.belongsTo(db.login, { as: 'allocatedToSection', foreignKey: 'allocatedTo' });
 db.allocateform.belongsTo(db.feeform, { as: 'feeformReference', foreignKey: 'feeformId' });
 db.allocateform.belongsTo(db.login, { as: 'allocatedToSection', foreignKey: 'allocatedTo' });

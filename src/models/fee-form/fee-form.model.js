@@ -1,6 +1,7 @@
 var Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     const FeeForm = sequelize.define("feeform", {
+
       formDate: {
         type: Sequelize.DATE,
         allowNull: false,
