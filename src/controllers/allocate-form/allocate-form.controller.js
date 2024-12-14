@@ -90,3 +90,45 @@ exports.getAllocatedFormByFeeForm = async (req, res) => {
       }
 
     };
+
+    exports.getAllocatedFormsByAllocatedTo = async (req, res) => {
+      try {
+        let where = {}
+        if(req.query.status){
+          console.log('status coming ', req.query.status);
+          where.status = req.query.status;
+        }
+        const { allocatedTo } = req.query;
+    
+        if(allocatedTo){
+          where.allocatedTo = allocatedTo;
+        }
+        if (!allocatedTo) {
+          return res.status(400).json({ message: 'allocatedTo is required' });
+        }
+    
+        // Fetch posts where allocatedTo matches the given user ID
+        const posts = await db.allocateform.findAll({
+          include: [
+            {
+              model: db.login, // Include the Login model
+              as: 'allocatedToSection', // Alias used in the association
+              required: false, 
+              attributes: ['userName', 'userType', 'id'], // Only select relevant fields
+            },
+            {
+            model: db.feeform, // Include the Login model
+            as: 'feeformReference', // Alias used in the association
+            required: false, 
+            attributes: ['id', 'allocatedTo', 'status', 'formDate'], // Only select relevant fields
+            },
+          ],
+          where: where,
+        });
+        successRes(res, posts, SUCCESS.LISTED);
+      } catch (error) {
+        console.error('Error fetching allocatedForm by allocatedTo:', error);
+        const message = error.message ? error.message : ERRORS.LISTED;
+        errorRes(res, error, message, file);
+      }
+};
