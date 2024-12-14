@@ -1493,8 +1493,13 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 'Pending'
       },
       status: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ENUM({
+          values: ['Pending', 'Approved', 'Objection']
+        }),
         defaultValue: 'Pending'
+      },
+      filepath: {
+        type: DataTypes.STRING,
       },
     },
     );

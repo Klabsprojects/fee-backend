@@ -132,3 +132,32 @@ exports.getAllocatedFormByFeeForm = async (req, res) => {
         errorRes(res, error, message, file);
       }
 };
+
+exports.updateFile = async (req, res) => {
+  try {
+          let query = {};
+          query.body = req.body;
+          if (req.file) {
+            query.body.filepath = req.file.path;
+            console.log('Uploaded file path:', req.file.path);
+          } else {
+            throw new Error('Photo upload failed: No Photo uploaded');
+          }
+          
+          console.log('query.body ', query.body);
+          // Step 1: Check if `id` is provided and fetch the student
+          if (req.query.id ) {
+              query.where = { id: req.query.id };
+              console.log('query ', query);
+              const updateResult = await commonService.update(db.allocateform, query);
+              console.log('Student updated with login id and approval status');
+              successRes(res, updateResult, SUCCESS.UPDATED);
+          } else {
+              throw 'Please provide valid inputs';
+          }
+  } catch (error) {
+      console.log('Error updating Student:', error);
+      const message = error.message ? error.message : ERRORS.GENERIC;
+      errorRes(res, null, "Error updating Student:", ERRORS.UPDATED);
+  }
+}

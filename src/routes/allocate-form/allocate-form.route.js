@@ -35,4 +35,10 @@ module.exports = (app) => {
     value.getAllocatedFormsByAllocatedTo
   )
 
+  app.put(
+    "/updateFile",
+    upload.single('filepath'),
+    value.updateFile
+  );
+
 }
