@@ -4,6 +4,7 @@ const {  jwt, ERRORS, SUCCESS, Op } = require("../../helpers/index.helper");
 const { successRes, errorRes } = require("../../middlewares/response.middleware")
 const { Login } = require("../../models/login/login.model")
 const { Sequelize } = require('sequelize');
+//const { Op } = require('sequelize'); // Import Sequelize operators
 
 const bcrypt = require('bcryptjs');
 const { where } = require("sequelize");
@@ -112,92 +113,6 @@ exports.getAllForms = async (req, res) => {
                 required: false, 
                 attributes: ['userName', 'userType', 'id'], // Only select relevant fields
                 //where: section ? { userName: section } : {},
-            },
-          ],
-          order: [['formDate', 'DESC']], // Optionally, order by upload date
-          where: where
-        });
-        successRes(res, posts, SUCCESS.LISTED);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        const message = error.message ? error.message : ERRORS.LISTED;
-        errorRes(res, error, message, file);
-      }
-
-    };
-
-    exports.getAllFormsByFilter = async (req, res) => {
-      try {
-        const { fromDate, toDate, status, section } = req.query;
-        console.log(fromDate, toDate, status);
-        const startDate = fromDate ? new Date(fromDate) : null;
-        const endDate = toDate ? new Date(toDate) : null;
-        console.log(startDate, endDate);
-        let where = {}
-    
-        if(startDate && endDate){
-          console.log('date coming ', startDate, endDate);
-          where.formDate = {
-              [Op.between]: [startDate, endDate]
-            }
-        }
-        if(status){
-          console.log('status coming ', status);
-          where.status = status;
-        }
-        // Filter by section if provided
-        if (section) {
-          where.allocatedTo = section;
-        }
-        // else
-        //   throw 'Pls provide section id';
-        // Fetch all posts
-        const posts = await db.feeform.findAll({
-          include: [
-            {
-                model: db.login, // Include the Login model
-                as: 'allocatedToSection', // Alias used in the association
-                required: false, 
-                attributes: ['userName', 'userType', 'id'], // Only select relevant fields
-                //where: section ? { userName: section } : {},
-            },
-            {
-              model: db.allocateform, // Include the AllocateForm model
-              as: 'allocateformReference', // Alias for the associated AllocateForm
-              required: false, // Ensure it's joined
-              attributes: [
-                'feeformId', // Include the relevant fields
-                'allocatedTo',
-                'proposedFeeLkg',
-                'previousOrderFeeLkg',
-                'proposedFeeUkg',
-                'previousOrderFeeUkg',
-                'proposedFeeFirst',
-                'previousOrderFeeFirst',
-                'proposedFeeSecond',
-                'previousOrderFeeSecond',
-                'proposedFeeThird',
-                'previousOrderFeeThird',
-                'proposedFeeFour',
-                'previousOrderFeeFour',
-                'proposedFeeFive',
-                'previousOrderFeeFive',
-                'proposedFeeSix',
-                'previousOrderFeeSix',
-                'proposedFeeSeven',
-                'previousOrderFeeSeven',
-                'proposedFeeEight',
-                'previousOrderFeeEight',
-                'proposedFeeNine',
-                'previousOrderFeeNine',
-                'proposedFeeTen',
-                'previousOrderFeeTen',
-                'proposedFeeEleven',
-                'previousOrderFeeEleven',
-                'proposedFeeTwelve',
-                'previousOrderFeeTwelve'
-                // Include other fields from AllocateForm as needed
-              ],
             },
           ],
           order: [['formDate', 'DESC']], // Optionally, order by upload date
@@ -337,4 +252,280 @@ exports.getAllForms = async (req, res) => {
       errorRes(res, error, message, file);
     }
 
+  };
+
+  exports.getAllFormsByFilter = async (req, res) => {
+    try {
+      const { fromDate, toDate, status, section } = req.query;
+      console.log(fromDate, toDate, status);
+      const startDate = fromDate ? new Date(fromDate) : null;
+      const endDate = toDate ? new Date(toDate) : null;
+      console.log(startDate, endDate);
+      let where = {}
+  
+      if(startDate && endDate){
+        console.log('date coming ', startDate, endDate);
+        where.formDate = {
+            [Op.between]: [startDate, endDate]
+          }
+      }
+      if(status){
+        console.log('status coming ', status);
+        where.status = status;
+      }
+      // Filter by section if provided
+      if (section) {
+        where.allocatedTo = section;
+      }
+      // else
+      //   throw 'Pls provide section id';
+      // Fetch all posts
+      const posts = await db.feeform.findAll({
+        include: [
+          {
+              model: db.login, // Include the Login model
+              as: 'allocatedToSection', // Alias used in the association
+              required: false, 
+              attributes: ['userName', 'userType', 'id'], // Only select relevant fields
+              //where: section ? { userName: section } : {},
+          },
+          {
+            model: db.allocateform, // Include the AllocateForm model
+            as: 'allocateformReference', // Alias for the associated AllocateForm
+            required: false, // Ensure it's joined
+            attributes: [
+              'feeformId', // Include the relevant fields
+              'allocatedTo',
+              'proposedFeeLkg',
+              'previousOrderFeeLkg',
+              'proposedFeeUkg',
+              'previousOrderFeeUkg',
+              'proposedFeeFirst',
+              'previousOrderFeeFirst',
+              'proposedFeeSecond',
+              'previousOrderFeeSecond',
+              'proposedFeeThird',
+              'previousOrderFeeThird',
+              'proposedFeeFour',
+              'previousOrderFeeFour',
+              'proposedFeeFive',
+              'previousOrderFeeFive',
+              'proposedFeeSix',
+              'previousOrderFeeSix',
+              'proposedFeeSeven',
+              'previousOrderFeeSeven',
+              'proposedFeeEight',
+              'previousOrderFeeEight',
+              'proposedFeeNine',
+              'previousOrderFeeNine',
+              'proposedFeeTen',
+              'previousOrderFeeTen',
+              'proposedFeeEleven',
+              'previousOrderFeeEleven',
+              'proposedFeeTwelve',
+              'previousOrderFeeTwelve',
+              'status'
+              // Include other fields from AllocateForm as needed
+            ],
+          },
+        ],
+        order: [['formDate', 'DESC']], // Optionally, order by upload date
+        where: where
+      });
+      successRes(res, posts, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
+
+exports.getAllFormsByStatusFeeform = async (req, res) => {
+try {
+  const { fromDate, toDate, section, status } = req.query;
+  console.log(fromDate, toDate, section);
+  let where = {};
+  
+  // Parsing date range
+  const startDate = fromDate ? new Date(fromDate) : null;
+  const endDate = toDate ? new Date(toDate) : null;
+  console.log(startDate, endDate);
+
+  // Construct where clause
+  if(status){
+    where = { 
+      status: status  // Filter FeeForm by status 'Allocated'
+    };
+  }
+  else
+    throw 'Pls provide status';
+
+  // Add additional filters if date range is provided
+  if (startDate && endDate) {
+    console.log('date coming ', startDate, endDate);
+    where.formDate = {
+      [Op.between]: [startDate, endDate]
+    };
+  }
+
+  // Filter by section if provided
+  if (section) {
+    where.allocatedTo = section;
+  }
+
+  // Fetch FeeForm records with associated AllocateForm, filtered by both status
+  const posts = await db.feeform.findAll({
+    include: [
+      {
+        model: db.login, // Include the Login model for 'allocatedToSection'
+        as: 'allocatedToSection', // Alias used in the association
+        required: false,
+        attributes: ['userName', 'userType', 'id'], // Only select relevant fields
+      },
+      {
+        model: db.allocateform, // Include the AllocateForm model
+        as: 'allocateformReference', // Alias for the associated AllocateForm
+        required: false, // Ensure it's joined, but can be null
+        // where: {
+        //   status: 'Approved', // Filter AllocateForm by status 'Approved'
+        // },
+        attributes: [
+          'feeformId', // Include the relevant fields
+              'allocatedTo',
+              'proposedFeeLkg',
+              'previousOrderFeeLkg',
+              'proposedFeeUkg',
+              'previousOrderFeeUkg',
+              'proposedFeeFirst',
+              'previousOrderFeeFirst',
+              'proposedFeeSecond',
+              'previousOrderFeeSecond',
+              'proposedFeeThird',
+              'previousOrderFeeThird',
+              'proposedFeeFour',
+              'previousOrderFeeFour',
+              'proposedFeeFive',
+              'previousOrderFeeFive',
+              'proposedFeeSix',
+              'previousOrderFeeSix',
+              'proposedFeeSeven',
+              'previousOrderFeeSeven',
+              'proposedFeeEight',
+              'previousOrderFeeEight',
+              'proposedFeeNine',
+              'previousOrderFeeNine',
+              'proposedFeeTen',
+              'previousOrderFeeTen',
+              'proposedFeeEleven',
+              'previousOrderFeeEleven',
+              'proposedFeeTwelve',
+              'previousOrderFeeTwelve',
+              'status'
+          // Include any other relevant fields from AllocateForm
+        ],
+      },
+    ],
+    order: [['formDate', 'DESC']], // Optionally, order by upload date
+    where: where
+  });
+
+  // Send success response with the fetched records
+  successRes(res, posts, SUCCESS.LISTED); 
+} catch (error) {
+  console.error('Error fetching posts:', error);
+  const message = error.message || ERRORS.LISTED;
+  errorRes(res, error, message, file); // Send error response
+}
+};
+
+exports.getAllFormsByStatusAllocateForm = async (req, res) => {
+  try {
+    const { fromDate, toDate, section, status } = req.query;
+    console.log(fromDate, toDate, section);
+    let where = {};
+    
+    // Parsing date range
+    const startDate = fromDate ? new Date(fromDate) : null;
+    const endDate = toDate ? new Date(toDate) : null;
+    console.log(startDate, endDate);
+    if(!status)
+      throw 'Pls provide status';
+  
+    // Add additional filters if date range is provided
+    if (startDate && endDate) {
+      console.log('date coming ', startDate, endDate);
+      where.formDate = {
+        [Op.between]: [startDate, endDate]
+      };
+    }
+  
+    // Filter by section if provided
+    if (section) {
+      where.allocatedTo = section;
+    } 
+  
+    // Fetch FeeForm records with associated AllocateForm, filtered by both status
+    const posts = await db.feeform.findAll({
+      include: [
+        {
+          model: db.login, // Include the Login model for 'allocatedToSection'
+          as: 'allocatedToSection', // Alias used in the association
+          required: false,
+          attributes: ['userName', 'userType', 'id'], // Only select relevant fields
+        },
+        {
+          model: db.allocateform, // Include the AllocateForm model
+          as: 'allocateformReference', // Alias for the associated AllocateForm
+          required: false, // Ensure it's joined, but can be null
+          where: {
+            status: 'Completed', // Filter AllocateForm by status 'Approved'
+          },
+          attributes: [
+            'feeformId', // Include the relevant fields
+              'allocatedTo',
+              'proposedFeeLkg',
+              'previousOrderFeeLkg',
+              'proposedFeeUkg',
+              'previousOrderFeeUkg',
+              'proposedFeeFirst',
+              'previousOrderFeeFirst',
+              'proposedFeeSecond',
+              'previousOrderFeeSecond',
+              'proposedFeeThird',
+              'previousOrderFeeThird',
+              'proposedFeeFour',
+              'previousOrderFeeFour',
+              'proposedFeeFive',
+              'previousOrderFeeFive',
+              'proposedFeeSix',
+              'previousOrderFeeSix',
+              'proposedFeeSeven',
+              'previousOrderFeeSeven',
+              'proposedFeeEight',
+              'previousOrderFeeEight',
+              'proposedFeeNine',
+              'previousOrderFeeNine',
+              'proposedFeeTen',
+              'previousOrderFeeTen',
+              'proposedFeeEleven',
+              'previousOrderFeeEleven',
+              'proposedFeeTwelve',
+              'previousOrderFeeTwelve',
+              'status'
+            // Include any other relevant fields from AllocateForm
+          ],
+        },
+      ],
+      order: [['formDate', 'DESC']], // Optionally, order by upload date
+      where: where
+    });
+  
+    // Send success response with the fetched records
+    successRes(res, posts, SUCCESS.LISTED); 
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    const message = error.message || ERRORS.LISTED;
+    errorRes(res, error, message, file); // Send error response
+  }
   };

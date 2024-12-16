@@ -29,13 +29,6 @@ module.exports = (app) => {
     value.getAllFormsBySection
   )
 
-  
-  app.get(
-    "/getAllFormsByFilter",
-    [jwt.verifyToken],
-    value.getAllFormsByFilter
-  )
-
   app.put(
     "/allocateFeeForm",
     [jwt.verifyToken],
@@ -64,6 +57,24 @@ module.exports = (app) => {
     "/getSchoolType",
     [jwt.verifyToken],
     value.getSchoolType
+  )
+
+  app.get(
+    "/getAllFormsByFilter",
+    [jwt.verifyToken],
+    value.getAllFormsByFilter
+  )
+
+  app.get(
+    "/getAllFormsByStatusFeeform",
+    [jwt.verifyToken],
+    value.getAllFormsByStatusFeeform
+  )
+
+  app.get(
+    "/getAllFormsByStatusAllocateForm",
+    [jwt.verifyToken],
+    value.getAllFormsByStatusAllocateForm
   )
 
 }
