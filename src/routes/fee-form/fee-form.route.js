@@ -77,4 +77,10 @@ module.exports = (app) => {
     value.getAllFormsByStatusAllocateForm
   )
 
+  app.get(
+    "/getFeeFormByFeeformId",
+    [jwt.verifyToken],
+    value.getFeeFormByFeeformId
+  )
+
 }

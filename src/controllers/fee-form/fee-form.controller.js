@@ -529,3 +529,33 @@ exports.getAllFormsByStatusAllocateForm = async (req, res) => {
     errorRes(res, error, message, file); // Send error response
   }
   };
+
+  exports.getFeeFormByFeeformId = async (req, res) => {
+    try {
+
+      let where = {}
+
+      if(req.query.feeformId){
+        console.log('id coming ', req.query.feeformId);
+        where.id = req.query.feeformId
+      }
+      else  
+        throw 'Pls provide feeformId';
+
+      // Fetch all posts
+      const posts = await db.feeform.findOne({
+        where: where
+      });
+
+      // Check if the post exists
+      if (!posts) {
+        throw new Error('No records found for the given feeformId');
+      }
+      successRes(res, posts, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
