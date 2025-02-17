@@ -79,19 +79,6 @@ exports.getAllForms = async (req, res) => {
 
     };
 
-    exports.allFormsCountAdmin = async (req, res) => {
-      try {
-
-        // Fetch all posts
-        const posts = await db.feeform.findAll({});
-        successRes(res, posts.length, SUCCESS.LISTED);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        const message = error.message ? error.message : ERRORS.LISTED;
-        errorRes(res, error, message, file);
-      }
-
-    };
 
     exports.getAllFormsBySection = async (req, res) => {
       try {
@@ -565,6 +552,87 @@ exports.getAllFormsByStatusAllocateForm = async (req, res) => {
       if (!posts) {
         throw new Error('No records found for the given feeformId');
       }
+      successRes(res, posts, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
+
+  
+  exports.allFormsCountAdmin = async (req, res) => {
+    try {
+
+      // Fetch all posts
+      const posts = await db.feeform.findAll({});
+      successRes(res, posts.length, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
+
+  exports.allFormsCountSection = async (req, res) => {
+    try {
+      const { section } = req.query;
+      let where = {}
+      // Filter by section if provided
+      if (section) {
+        where.allocatedTo = section;
+      }
+      else
+        throw 'Pls provide section id';
+      // Fetch all posts
+      const posts = await db.feeform.findAll({
+        where: where
+      });
+      successRes(res, posts.length, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
+
+  
+  exports.recentFormsAdmin = async (req, res) => {
+    try {
+
+      // Fetch all posts
+      const posts = await db.feeform.findAll({
+        limit: 5, // Limit to 5 records
+        order: [['formDate', 'DESC']] // Order by the createdAt field in descending order (most recent first)
+      });
+      successRes(res, posts, SUCCESS.LISTED);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      const message = error.message ? error.message : ERRORS.LISTED;
+      errorRes(res, error, message, file);
+    }
+
+  };
+
+  exports.recentFormsSection = async (req, res) => {
+    try {
+      const { section } = req.query;
+      let where = {}
+      // Filter by section if provided
+      if (section) {
+        where.allocatedTo = section;
+      }
+      else
+        throw 'Pls provide section id';
+      // Fetch all posts
+      const posts = await db.feeform.findAll({
+        where: where,
+        limit: 5, // Limit to 5 records
+        order: [['formDate', 'DESC']] // Order by the createdAt field in descending order (most recent first)
+      });
       successRes(res, posts, SUCCESS.LISTED);
     } catch (error) {
       console.error('Error fetching posts:', error);

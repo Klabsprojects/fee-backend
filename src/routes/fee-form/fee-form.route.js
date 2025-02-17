@@ -22,12 +22,6 @@ module.exports = (app) => {
     [jwt.verifyToken],
     value.getAllForms
   )
-
-  app.get(
-    "/allFormsCountAdmin",
-    [jwt.verifyToken],
-    value.allFormsCountAdmin
-  )
   
   app.get(
     "/getAllFormsBySection",
@@ -87,6 +81,31 @@ module.exports = (app) => {
     "/getFeeFormByFeeformId",
     [jwt.verifyToken],
     value.getFeeFormByFeeformId
+  )
+
+  
+  app.get(
+    "/allFormsCountAdmin",
+    [jwt.verifyToken],
+    value.allFormsCountAdmin
+  )
+
+  app.get(
+    "/allFormsCountSection",
+    [jwt.verifyToken],
+    value.allFormsCountSection
+  )
+
+  app.get(
+    "/recentFormsAdmin",
+    [jwt.verifyToken],
+    value.recentFormsAdmin
+  )
+
+  app.get(
+    "/recentFormsSection",
+    [jwt.verifyToken],
+    value.recentFormsSection
   )
 
 }
