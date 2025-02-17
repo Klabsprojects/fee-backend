@@ -22,6 +22,12 @@ module.exports = (app) => {
     [jwt.verifyToken],
     value.getAllForms
   )
+
+  app.get(
+    "/allFormsCountAdmin",
+    [jwt.verifyToken],
+    value.allFormsCountAdmin
+  )
   
   app.get(
     "/getAllFormsBySection",

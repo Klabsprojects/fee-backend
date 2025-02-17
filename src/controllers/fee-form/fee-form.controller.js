@@ -79,6 +79,20 @@ exports.getAllForms = async (req, res) => {
 
     };
 
+    exports.allFormsCountAdmin = async (req, res) => {
+      try {
+
+        // Fetch all posts
+        const posts = await db.feeform.findAll({});
+        successRes(res, posts.length, SUCCESS.LISTED);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        const message = error.message ? error.message : ERRORS.LISTED;
+        errorRes(res, error, message, file);
+      }
+
+    };
+
     exports.getAllFormsBySection = async (req, res) => {
       try {
         const { fromDate, toDate, status, section } = req.query;
