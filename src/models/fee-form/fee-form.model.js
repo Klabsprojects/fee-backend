@@ -15,6 +15,19 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      schoolCategory: {
+        type: DataTypes.ENUM('MC', 'NP', 'SF','CB'),  // Restricting values to 'MC' or 'PR'
+        allowNull: false,
+      },
+      schoolId: {
+        type: Sequelize.STRING,  // Use STRING for schoolId to manage custom increment
+        allowNull: true,
+        // We will set the schoolId dynamically during record creation
+      },
+      feeformSchoolId: {
+        type: Sequelize.STRING,  // Use STRING for schoolId to manage custom increment
+        allowNull: true,
+      },
       address: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -163,5 +176,62 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     );
-    return FeeForm;
+    //return FeeForm;
+
+// // Hook to generate the unique number before creating the record
+// FeeForm.addHook('beforeCreate', async (feeForm) => {
+//   try {
+//     // Log to ensure the hook is being triggered
+//     console.log('beforeCreate hook triggered');
+
+//     const districtNumber = '01'; // Example: Assuming district number is '01'
+//     const matriculationCode = 'MC'; // Fixed value for "Matriculation"
+//     const year = new Date().getFullYear().toString().slice(2); // Get the last two digits of the current year
+
+//     // Ensure serial number is generated and doesn't return an empty string
+//     const serialNumber = await getNextSerialNumber();
+
+//     // Log the generated serial number
+//     console.log('Generated serial number:', serialNumber);
+
+//     if (!serialNumber) {
+//       throw new Error('Failed to generate serial number');
+//     }
+
+//     // Generate the unique number
+//     feeForm.unique_number = `${districtNumber}${matriculationCode}${year}${serialNumber}`;
+
+//     // Log the generated unique_number
+//     console.log('Generated unique_number:', feeForm.unique_number);
+
+//   } catch (error) {
+//     console.error('Error generating unique_number:', error);
+//     throw new Error('Error generating unique_number');
+//   }
+// });
+
+// // Helper function to get the next serial number
+// async function getNextSerialNumber() {
+//   try {
+//     // Get the most recent record and extract the serial number
+//     const latestRecord = await FeeForm.findOne({
+//       order: [['createdAt', 'DESC']], // Get the most recent record
+//     });
+
+//     let serialNumber = 1;
+//     if (latestRecord) {
+//       const lastSerial = parseInt(latestRecord.unique_number.slice(6), 10); // Get the last 4 digits of the unique number
+//       serialNumber = lastSerial + 1;
+//     }
+
+//     console.log('Next serial number:', serialNumber); // Debugging log
+
+//     return serialNumber.toString().padStart(4, '0'); // Ensure the serial number is 4 digits
+//   } catch (error) {
+//     console.error('Error fetching latest serial number:', error);
+//     throw new Error('Failed to fetch latest serial number');
+//   }
+// }
+
+return FeeForm;
   };

@@ -17,13 +17,40 @@ exports.register = async (req, res) => {
         console.log('try register');
         console.log(req.body);
         let query = req.body;
-        // if (req.file) {
-        //     query.filepath = req.file.path;
-        //     console.log('Uploaded file path:', req.file.path);
-        // } else {
-        //     throw new Error('File upload failed: No file uploaded');
-        // }
-        //const results = await attendance.create(query);
+        const { schoolCategory } = query;
+        let nextSchoolId;
+
+        // Check if schoolCategory is provided
+        if (!schoolCategory) {
+            return errorRes(res, null, 'schoolCategory is required', file);
+        }
+
+        // Find the last record for the given schoolCategory
+        const lastRecord = await db.feeform.findOne({
+            where: { schoolCategory },
+            order: [['schoolId', 'DESC']], // Ordering by formDate or another field (latest record)
+            attributes: ['schoolId'],
+        });
+        console.log('last record ', lastRecord);
+        
+        // Get the current year and its last two digits
+        const currentYear = new Date().getFullYear();
+        const currentYearSuffix = currentYear.toString().slice(-2);
+
+        // If a record exists, increment the schoolId
+        if (lastRecord && lastRecord.schoolId && lastRecord != null) {
+            const lastSchoolId = lastRecord.schoolId;
+            // Increment the numeric part of the schoolId
+            nextSchoolId = (parseInt(lastSchoolId) + 1).toString().padStart(4, '0');
+        }
+        else{
+          // Default starting schoolId
+          nextSchoolId = currentYearSuffix + '0001';
+        }
+
+        // Set the next schoolId into the query object
+        query.schoolId = nextSchoolId;
+        query.feeformSchoolId = req.body.schoolCategory + nextSchoolId;
         const results = await commonService.insertOne(db.feeform, query);
         console.log(results);
         successRes(res, results, SUCCESS.CREATED);
